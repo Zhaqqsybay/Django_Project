@@ -3,10 +3,10 @@ from django.shortcuts import render, redirect
 
 from .models import *
 
-menu = [{'title': "О сайте", 'url_name': 'about'},
-        {'title': "Добавить статью", 'url_name': 'add_page'},
-        {'title': "Обратная связь", 'url_name': 'contact'},
-        {'title': "Войти", 'url_name': 'login'}
+menu = [{'title': "Car Dealer App", 'url_name': 'about'},
+        {'title': "All Brands", 'url_name': 'add_page'},
+        {'title': "All Dealers", 'url_name': 'contact'},
+        {'title': "Login", 'url_name': 'login'}
 ]
 
 
@@ -18,24 +18,24 @@ def index(request):
         'posts': posts,
         'cats': cats,
         'menu': menu,
-        'title': 'Главная страница',
+        'title': 'Car Dear',
         'cat_selected': 0,
     }
 
     return render(request, 'women/index.html', context=context)
 
 def about(request):
-    return render(request, 'women/about.html', {'menu': menu, 'title': 'О сайте'})
+    return render(request, 'women/about.html', {'menu': menu, 'title': 'Car Dealer App'})
 
 
 def addpage(request):
-    return HttpResponse("Добавление статьи")
+    return HttpResponse("All Brands")
 
 def contact(request):
-    return HttpResponse("Обратная связь")
+    return HttpResponse("All Dealers")
 
 def login(request):
-    return HttpResponse("Авторизация")
+    return HttpResponse("Login")
 
 
 def pageNotFound(request, exception):

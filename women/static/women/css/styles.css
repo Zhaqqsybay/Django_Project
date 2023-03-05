@@ -26,8 +26,8 @@ img.img-article-left {
 }
 
 img.img-article-left.thumb {
-	max-width: 150px;
-	height: auto;
+	max-width: 300px;
+	height: 300px;
 }
 
 p.link-read-post {
@@ -36,7 +36,7 @@ p.link-read-post {
 p.link-read-post a {
 	padding: 10px;
 	min-width: 100px;
-	background: #333671;
+	background: #333671	;
 	color: #fff;
 	text-decoration: none;
 }
