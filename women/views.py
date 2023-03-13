@@ -11,7 +11,7 @@ menu = [{'title': "Car Dealer App", 'url_name': 'about'},
 
 
 def index(request):
-    posts = Women.objects.all()
+    posts = Car.objects.all()
     cats = Category.objects.all()
 
     context = {
@@ -45,7 +45,7 @@ def show_post(request, post_id):
     return HttpResponse(f"Отображение статьи с id = {post_id}")
 
 def show_category(request, cat_id):
-    posts = Women.objects.filter(cat_id=cat_id)
+    posts = Car.objects.filter(cat_id=cat_id)
     cats = Category.objects.all()
 
     if len(posts) == 0:

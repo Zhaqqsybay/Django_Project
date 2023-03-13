@@ -1,7 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
-class Women(models.Model):
+class Car(models.Model):
     title = models.CharField(max_length=255, verbose_name="Заголовок")
     content = models.TextField(blank=True, verbose_name="Текст статьи")
     photo = models.ImageField(upload_to="photos/%Y/%m/%d/", verbose_name="Фото")
@@ -17,8 +17,8 @@ class Women(models.Model):
         return reverse('post', kwargs={'post_id': self.pk})
 
     class Meta:
-        verbose_name = 'Известные женщины'
-        verbose_name_plural = 'Известные женщины'
+        verbose_name = 'Известные машины'
+        verbose_name_plural = 'Известные машины'
         ordering = ['-time_create', 'title']
 
 class Category(models.Model):
@@ -33,4 +33,18 @@ class Category(models.Model):
     class Meta:
         verbose_name = 'Категорию'
         verbose_name_plural = 'Категории'
+        ordering = ['id']
+
+class Carbrand(models.Model):
+    name = models.CharField(max_length=100, db_index=True, verbose_name="Марка машины")
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('category', kwargs={'cat_id': self.pk})
+
+    class Meta:
+        verbose_name = 'Марка машины'
+        verbose_name_plural = 'Марки машин'
         ordering = ['id']
