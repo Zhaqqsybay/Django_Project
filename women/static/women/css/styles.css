@@ -76,15 +76,11 @@ ul.list-articles li {
 .clear {clear: both;}
 
 .header {
-	background: #3F4137;
+	background: black;
 	height: 60px;
 }
 
-.logo {
-	background: url('../images/logo.png') no-repeat 10px 5px;
-	width: 70px;
-	height: 60px;
-}
+
 
 ul.mainmenu {
 	list-style: none;
@@ -356,7 +352,7 @@ ul.lang-list li a:hover {color: #fdc073;}
 #footer {
 	box-sizing: border-box;
 
-	background: #3F4137;
+	background: black;
 	padding: 5px;
 	color: #aaa;
 	font-size: 14px;

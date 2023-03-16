@@ -2,6 +2,19 @@
 {% extends 'women/base.html' %}
 
 {% block content %}
+   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fru%2F8%2F8e%2F%25D0%259E%25D0%25B1%25D0%25BB%25D0%25BE%25D0%25B6%25D0%25BA%25D0%25B0_Dota_2.jpg&tbnid=HdNMFWO1CmU5FM&vet=12ahUKEwifqqy_gOD9AhVREXcKHe9bCTEQMygAegUIARDgAQ..i&imgrefurl=https%3A%2F%2Fru.wikipedia.org%2Fwiki%2FDota_2&docid=TK2hBpqXLKtalM&w=600&h=900&itg=1&q=dota&ved=2ahUKEwifqqy_gOD9AhVREXcKHe9bCTEQMygAegUIARDgAQ" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="logo.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="main.ico" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
 <ul class="list-articles">
 	{% for p in posts %}
 			<li><div class="article-panel">
@@ -23,3 +36,4 @@
 	{% endfor %}
 </ul>
 {% endblock %}
+
