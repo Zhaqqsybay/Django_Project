@@ -17,12 +17,8 @@ class CategoryAdmin(admin.ModelAdmin):
     search_fields = ('name',)
     prepopulated_fields = {"slug": ("name",)}
 
-class CarbrandAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name')
-    list_display_links = ('id', 'name')
-    search_fields = ('name',)
+
 
 
 admin.site.register(Car, CarAdmin)
 admin.site.register(Category, CategoryAdmin)
-admin.site.register(Carbrand, CarbrandAdmin)

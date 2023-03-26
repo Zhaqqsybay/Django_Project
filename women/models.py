@@ -15,7 +15,7 @@ class Car(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('post', kwargs={'post_id': self.pk})
+        return reverse('post', kwargs={'post_slug': self.slug})
 
     class Meta:
         verbose_name = 'Известные машины'
@@ -30,23 +30,11 @@ class Category(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('category', kwargs={'cat_id': self.pk})
+        return reverse('category', kwargs={'cat_slug': self.slug})
 
     class Meta:
         verbose_name = 'Категорию'
         verbose_name_plural = 'Категории'
         ordering = ['id']
 
-class Carbrand(models.Model):
-    name = models.CharField(max_length=100, db_index=True, verbose_name="Марка машины")
 
-    def __str__(self):
-        return self.name
-
-    def get_absolute_url(self):
-        return reverse('category', kwargs={'cat_id': self.pk})
-
-    class Meta:
-        verbose_name = 'Марка машины'
-        verbose_name_plural = 'Марки машин'
-        ordering = ['id']
