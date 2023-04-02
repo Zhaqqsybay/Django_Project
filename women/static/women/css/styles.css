@@ -262,6 +262,8 @@ ul.content-table li a:hover {color: #F0711C;}
 	color: #000;
 	font-size: 20px;
 	font-family: Yandex Sans Display Light;
+	display: grid;
+	grid-template-columns: repeat(4, 200px);
 }
 .content-text h1 {font-size: 32px;}
 
@@ -423,3 +425,4 @@ ul.lang-list li a:hover {color: #fdc073;}
 .list-pages .page-num-selected:hover {
 	box-shadow: none;
 }
+

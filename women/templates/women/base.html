@@ -21,12 +21,13 @@
 			<ul id="mainmenu" class="mainmenu">
 			<li><h2 class="cars" style="margin-top: auto">CARS</h2><a href="{% url 'home' %}"></a></li>
 {% for m in menu %}
-	{% if not forloop.last %}
 			<li><a href="{% url m.url_name %}">{{m.title}}</a></li>
-	{% else %}
-			<li class="last"><a href="{% url m.url_name %}">{{m.title}}</a></li>
-	{% endif %}
 {% endfor %}
+            {% if request.user.is_authenticated %}
+            <li class="last">{{ user.username }} | <a href="{% url 'logout' %}">Выйти</a></li>
+            {% else %}
+            <li class="last"><a href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'login' %}">Войти</a></li>
+            {% endif %}
 			</ul>
 			<div class="clear"></div>
 		</div>
@@ -35,6 +36,7 @@
 
 <table class="table-content" border=0 cellpadding="0" cellspacing="0">
 <tr>
+
 <!-- Sidebar слева -->
 	<td valign="top" class="left-chapters">
 
@@ -58,13 +60,25 @@
 	</ul>
 </td>
 <!-- Конец Sidebar'а -->
+
 <td valign="top" class="content">
 	<!-- Хлебные крошки -->
 	{% block breadcrumbs %}
 	{% endblock %}
 
+
+<!-- home section starts -->
+<section class="home">
+
+    <h1 class="home-parallax" data-speed="-2">find your car</h1>
+    <img  class="home-parallax" data-speed="5" src="images/home.jpg" alt="">
+    <a href="#" class="btn home-parallax" data-speed="7"> explore cars</a>
+
+</section>
+<!-- home section ends -->
+
 <!-- Блок контента -->
-	<div class="content-text">
+	<div class="mt-4" style="width: 400px">
 {% block content %}
 {% endblock %}
     {% if page_obj.has_other_pages %}
@@ -100,8 +114,104 @@
 </td></tr>
 <!-- Footer -->
 <tr><td valign=top>
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<div class="" style="width: 1518px">
 
+  <footer class="text-white text-center text-lg-start" style="background-color: rgb(0,0,0);">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!--Grid row-->
+      <div class="row mt-4">
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">About company</h5>
+
+          <p>
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+            voluptatum deleniti atque corrupti.
+          </p>
+
+          <p>
+            Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
+            molestias.
+          </p>
+
+          <div class="mt-4">
+            <!-- Facebook -->
+            <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-facebook-f"></i></a>
+            <!-- Dribbble -->
+            <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-dribbble"></i></a>
+            <!-- Twitter -->
+            <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-twitter"></i></a>
+            <!-- Google + -->
+            <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-google-plus-g"></i></a>
+            <!-- Linkedin -->
+          </div>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4 pb-1">Search something</h5>
+
+          <div class="form-outline form-white mb-4">
+            <input type="text" id="formControlLg" class="form-control form-control-lg" />
+            <label class="form-label" for="formControlLg">Search</label>
+          </div>
+
+          <ul class="fa-ul" style="margin-left: 1.65em;">
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">Warsaw, 00-967, Poland</span>
+            </li>
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">contact@example.com</span>
+            </li>
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+7 777 707 07 77</span>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">Opening hours</h5>
+
+          <table class="table text-center text-white">
+            <tbody class="fw-normal">
+              <tr>
+                <td>Mon - Thu:</td>
+                <td>8am - 9pm</td>
+              </tr>
+              <tr>
+                <td>Fri - Sat:</td>
+                <td>8am - 1am</td>
+              </tr>
+              <tr>
+                <td>Sunday:</td>
+                <td>9am - 10pm</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgb(0,0,0);">
+      © 2023 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+</div>
+<!-- End of .container -->
 </td></tr></table>
 <!-- Конец footer'а и страницы -->
+
 </body>
 </html>
