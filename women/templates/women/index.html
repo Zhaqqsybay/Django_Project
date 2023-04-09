@@ -1,15 +1,17 @@
+
 {% extends 'women/base.html' %}
+
 
 {% block content %}
 <ul class="list-articles">
-	{% for p in object_list %}
+	{% for p in posts %}
 			<li><div class="article-panel">
-	<p class="first">Cars: {{p.cat}}</p>
-	<p class="last">Date: {{p.time_update|date:"d-m-Y H:i:s"}}</p>
+	<p class="first">Категория: {{p.cat}}</p>
+	<p class="last">Дата: {{p.time_update|date:"d-m-Y H:i:s"}}</p>
 </div>
 
 {% if p.photo %}
-            <p><img class="img-article-left thumb" src="{{ p.photo.url }}"></p>
+	<p><img class="img-article-left thumb" src="{{p.photo.url}}"></p>
 {% endif %}
 
 				<h2>{{p.title}}</h2>
@@ -22,4 +24,3 @@
 	{% endfor %}
 </ul>
 {% endblock %}
-

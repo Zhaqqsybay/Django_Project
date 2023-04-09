@@ -67,18 +67,8 @@
 	{% endblock %}
 
 
-<!-- home section starts -->
-<section class="home">
-
-    <h1 class="home-parallax" data-speed="-2">find your car</h1>
-    <img  class="home-parallax" data-speed="5" src="images/home.jpg" alt="">
-    <a href="#" class="btn home-parallax" data-speed="7"> explore cars</a>
-
-</section>
-<!-- home section ends -->
-
 <!-- Блок контента -->
-	<div class="mt-4" style="width: 400px">
+	<div class="mt-4">
 {% block content %}
 {% endblock %}
     {% if page_obj.has_other_pages %}

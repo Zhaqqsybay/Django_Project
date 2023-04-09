@@ -4,7 +4,7 @@ html, body {
 	padding: 0;
 	height: 100%;
 	width: 100%;
-	color: #444;
+	color: #444
 }
 
 a {
@@ -79,7 +79,6 @@ ul.list-articles li {
 	background: black;
 	height: 60px;
 }
-
 
 
 ul.mainmenu {
@@ -425,4 +424,17 @@ ul.lang-list li a:hover {color: #fdc073;}
 .list-pages .page-num-selected:hover {
 	box-shadow: none;
 }
-
+.home{
+	padding-top: 10rem;
+	text-align: center;
+	overflow-x: hidden;
+}
+.home h1{
+	font-size: 7.5vw;
+	text-transform: uppercase;
+	color: black;
+}
+.home img{
+	width: 100%;
+	margin: 1rem 0;
+}
