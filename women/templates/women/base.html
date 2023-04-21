@@ -16,26 +16,23 @@
 <body>
 <table class="table-page" border=0 cellpadding="0" cellspacing="0">
 <tr><td valign=top>
-{% block mainmenu %}
-		<div class="header">
-			<ul id="mainmenu" class="mainmenu">
-			<li><h2 class="cars" style="margin-top: auto">CARS</h2><a href="{% url 'home' %}"></a></li>
-{% for m in menu %}
-			<li><a href="{% url m.url_name %}">{{m.title}}</a></li>
-{% endfor %}
-            {% if request.user.is_authenticated %}
-            <li class="last">{{ user.username }} | <a href="{% url 'logout' %}">Выйти</a></li>
-            {% else %}
-            <li class="last"><a href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'login' %}">Войти</a></li>
-            {% endif %}
-			</ul>
-			<div class="clear"></div>
-		</div>
-{% endblock mainmenu %}
-
+ <header>
+      <nav class = "navbar">
+        <div class = "container">
+         <a href="{% url 'home' %}" class="navbar-brand">CARS</a></li>
+          <div class = "navbar-nav">
+            <a href = "{% url 'about' %}">about</a>
+            <a href = "{% url 'contact' %}">contact</a>
+              <li class="last"><a href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'login' %}">Войти</a></li>
+          </div>
+        </div>
+      </nav>
+        </header>
 
 <table class="table-content" border=0 cellpadding="0" cellspacing="0">
 <tr>
+
+
 
 <!-- Sidebar слева -->
 	<td valign="top" class="left-chapters">
