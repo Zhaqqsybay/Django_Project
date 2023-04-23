@@ -20,11 +20,20 @@ from django.urls import path
 from coolsite import settings
 from women.views import *
 from django.urls import path, include
+from rest_framework import routers
+
+
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('captcha/', include('captcha.urls')),
     path('', include('women.urls')),
+    path('api/v1/car/', CarAPIList.as_view()),
+    path('api/v1/car/<int:pk>/', CarAPIUpdate.as_view()),
+    path('api/v1/cardelete/<int:pk>/', CarAPIDestroy.as_view()),
+
 ]
 
 if settings.DEBUG:

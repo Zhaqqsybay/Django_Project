@@ -2,14 +2,22 @@ from django.contrib.auth import logout, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.core.paginator import Paginator
+from django.forms import model_to_dict
 from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from rest_framework import generics, viewsets, mixins
+from rest_framework.decorators import action
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.viewsets import GenericViewSet
 
 from .forms import *
 from .models import *
+from .permissions import IsAdminOrReadOnly, IsOwnerOrReadOnly
+from .serializers import CarSerializer
 from .utils import *
 
 
@@ -183,3 +191,21 @@ class LoginUser(DataMixin, LoginView):
 def logout_user(request):
     logout(request)
     return redirect('login')
+
+
+class CarAPIList(generics.ListCreateAPIView):
+    queryset = Car.objects.all()
+    serializer_class = CarSerializer
+    # permission_classes = (IsAuthenticatedOrReadOnly, )
+
+
+class CarAPIUpdate(generics.RetrieveUpdateAPIView):
+    queryset = Car.objects.all()
+    serializer_class = CarSerializer
+    permission_classes = (IsAdminOrReadOnly,)
+
+
+class CarAPIDestroy(generics.RetrieveDestroyAPIView):
+    queryset = Car.objects.all()
+    serializer_class = CarSerializer
+    permission_classes = (IsAdminOrReadOnly, )
