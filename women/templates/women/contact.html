@@ -1,6 +1,22 @@
-
+<style>
+   [type="submit"] {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 100%;
+  background:#CC6666;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+[type="submit"]:hover { background:#CC4949; }
+</style>
 {% extends 'women/base.html' %}
-
 {% block content %}
 <h1>{{title}}</h1>
 
@@ -14,7 +30,7 @@
 <div class="form-error">{{ f.errors }}</div>
 {% endfor %}
 
-    <button type="submit">Отправить</button>
+    <input type="submit" value="SUBMIT"/>
 </form>
 
 {% endblock %}

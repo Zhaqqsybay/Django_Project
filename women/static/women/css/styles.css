@@ -397,23 +397,6 @@ ul.lang-list li a:hover {color: #fdc073;}
 	font-family: Sans-serif, Arial, Tahoma;
 	font-style: italic;
 }
-
-#footer {
-	box-sizing: border-box;
-
-	background: black;
-	padding: 5px;
-	color: #aaa;
-	font-size: 14px;
-	font-family: Verdana, Geneva, Arial, Helvetica;
-	text-align: left;
-	overflow: hidden;
-}
-#footer a {
-	text-decoration: underline;
-	color: #aaa;
-}
-
 .form-input {
     width: 300px;
     font-size: 16px;
@@ -472,4 +455,54 @@ ul.lang-list li a:hover {color: #fdc073;}
 .list-pages .page-num-selected:hover {
 	box-shadow: none;
 }
+.footer{
+    background: black;
+    color: white;
+    border-top: 2px solid silver;
+}
+.footer-container {
+	margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.footer-container .logot{
+    color: white;
+    margin-bottom: 1rem;
 
+}
+.footer-container .footer-box{
+    display: flex;
+    flex-direction: column;
+}
+.social{
+    display: flex;
+    align-items: center;
+}
+.social a{
+    font-size: 24px;
+    color: white;
+    margin-right: 1rem;
+}
+.social a:hover{
+    color: red;
+}
+.footer-box h3{
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+.footer-box a,
+.footer-box p{
+    color: gray;
+    margin-bottom: 10px;
+}
+.footer-box a:hover{
+    color: red;
+}
+.copyright{
+    padding: 20px;
+    text-align: center;
+    color: white;
+    background: black;
+}
