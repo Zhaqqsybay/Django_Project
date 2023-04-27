@@ -12,7 +12,7 @@ class Car(models.Model):
     time_update = models.DateTimeField(auto_now=True, verbose_name="Время изменения")
     is_published = models.BooleanField(default=True, verbose_name="Публикация")
     cat = models.ForeignKey('Category', on_delete=models.PROTECT, null=True, verbose_name="Категории")
-    user = models.ForeignKey(User, verbose_name='Пользователь', on_delete=models.CASCADE)
+
 
     def __str__(self):
         return self.title

@@ -5,7 +5,7 @@
 <head>
 	<title>{{title}}</title>
 	<link type="text/css" href="{% static 'women/css/styles.css' %}" rel="stylesheet" />
-
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="shortcut icon" href="{% static 'women/images/main.ico' %}" type="image/x-icon"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +22,7 @@
         <div class = "container">
          <a href="{% url 'home' %}" class="navbar-brand">CARS</a></li>
           <div class = "navbar-nav">
-            <a href = "{% url 'about' %}">about</a>
+            <a href = "{% url 'about' %}">novelties</a>
             <a href = "{% url 'contact' %}">contact</a>
               <li class="last"><a href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'login' %}">Войти</a></li>
               <li class="last">{{ user.username }} | <a href="{% url 'logout' %}"> Выйти </a></li>

@@ -13,18 +13,6 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Carbrand',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(db_index=True, max_length=100, verbose_name='Марка машины')),
-            ],
-            options={
-                'verbose_name': 'Марка машины',
-                'verbose_name_plural': 'Марки машин',
-                'ordering': ['id'],
-            },
-        ),
-        migrations.CreateModel(
             name='Category',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
