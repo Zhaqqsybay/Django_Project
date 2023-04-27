@@ -11,7 +11,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from rest_framework import generics, viewsets, mixins
 from rest_framework.decorators import action
 from rest_framework.pagination import PageNumberPagination
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
@@ -203,7 +203,7 @@ class CarAPIListPagination(PageNumberPagination):
 class CarAPIList(generics.ListCreateAPIView):
     queryset = Car.objects.all()
     serializer_class = CarSerializer
-    # permission_classes = (IsAuthenticatedOrReadOnly, )
+   # permission_classes = (IsAuthenticatedOrReadOnly, )
     pagination_class = CarAPIListPagination
 
 

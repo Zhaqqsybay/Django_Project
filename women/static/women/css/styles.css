@@ -25,10 +25,12 @@ html, body {
     margin: 0 auto;
     padding: 0 1.2rem;
 }
-.navbar{
-    background: rgba(0, 0, 0, 0.6);
-    padding: 1.2rem;
 
+/* header */
+
+.navbar{
+	background-color: black;
+    padding: 1.2rem;
 }
 .navbar-brand{
     color: #fff;
@@ -42,7 +44,8 @@ html, body {
 .navbar-nav{
     padding: 0.8rem 0 0.2rem 0;
     text-align: center;
-	display: grid;
+	display: flex;
+	margin-left: 350px;
 }
 .navbar-nav a{
     text-transform: uppercase;
@@ -53,20 +56,10 @@ html, body {
     text-decoration: none;
     display: inline-block;
     padding: 0.4rem 0.1rem;
-    letter-spacing: 3px;
     transition: opacity 0.5s ease;
 }
 .navbar-nav a:hover{
     opacity: 0.7;
-}
-
-a {
-	color: #0059b2;
-	text-decoration: none;
-}
-a:hover {
-	color: #CC0000;
-	text-decoration: underline;
 }
 
 img {max-width: 600px; height: auto;}
@@ -85,6 +78,7 @@ img.img-article-left.thumb {
 
 p.link-read-post {
 	text-align: right;
+	margin-bottom: 10px;
 }
 p.link-read-post a {
 	padding: 10px;
@@ -506,3 +500,29 @@ ul.lang-list li a:hover {color: #fdc073;}
     color: white;
     background: black;
 }
+.products {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .product {
+        width: calc(33.33% - 10px);
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      .product img {
+        max-width: 100%;
+      }
+      .product h3 {
+        margin-top: 0;
+        font-size: 18px;
+      }
+      .product p {
+        margin: 0;
+        font-size: 16px;
+      }
