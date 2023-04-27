@@ -10,6 +10,8 @@ from django.views.generic import ListView, DetailView, CreateView, FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from rest_framework import generics, viewsets, mixins
 from rest_framework.decorators import action
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
@@ -193,17 +195,23 @@ def logout_user(request):
     return redirect('login')
 
 
+class CarAPIListPagination(PageNumberPagination):
+    page_size = 3
+    page_size_query_param = 'page_size'
+    max_page_size = 3
+
 class CarAPIList(generics.ListCreateAPIView):
     queryset = Car.objects.all()
     serializer_class = CarSerializer
     # permission_classes = (IsAuthenticatedOrReadOnly, )
+    pagination_class = CarAPIListPagination
 
 
 class CarAPIUpdate(generics.RetrieveUpdateAPIView):
     queryset = Car.objects.all()
     serializer_class = CarSerializer
-    permission_classes = (IsAdminOrReadOnly,)
-
+    permission_classes = (IsAuthenticated, )
+    # authentication_classes = (TokenAuthentication, )
 
 class CarAPIDestroy(generics.RetrieveDestroyAPIView):
     queryset = Car.objects.all()
